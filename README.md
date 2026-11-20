@@ -1,10 +1,32 @@
 # herdr-dash
 
-A [Herdr](https://herdr.dev) mod: press one key and [gh-dash](https://github.com/dlvhdr/gh-dash) opens in a large dialog over your window, in the folder of the pane you were in. `q` quits it and closes the dialog.
+A [Herdr](https://herdr.dev) plugin (TUI) and mod (app): press one key and [gh-dash](https://github.com/dlvhdr/gh-dash) opens in a large dialog over your window, in the folder of the pane you were in. `q` quits it and closes the dialog.
 
 ![gh-dash popup](preview.png)
 
 ## Install
+
+### Herdr TUI (plugin)
+
+```sh
+herdr plugin install ldangelo/herdr-dash
+```
+
+Bind a key in `~/.config/herdr/config.toml`:
+
+```toml
+[[keys.command]]
+key = "prefix+g"
+type = "plugin_action"
+command = "ldangelo.herdr-dash.open"
+description = "gh-dash"
+```
+
+Or run **gh-dash: open popup** from the command palette. The popup is 90% of the terminal and starts in the folder of the focused pane; `q` quits gh-dash and closes it.
+
+Needs `gh` with the extension (`gh extension install dlvhdr/gh-dash`) and `gh auth login`. macOS and Linux. Listed in the [Herdr marketplace](https://herdr.dev/plugins/) through the `herdr-plugin` topic.
+
+### Herdr app (mod)
 
 Ask your Herdr agent to add this repo, or by hand:
 
